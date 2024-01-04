@@ -1,6 +1,6 @@
 package com.abutua.productbackend.resources;
 
-import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import org.springframework.http.HttpStatus;
@@ -17,7 +17,11 @@ import com.abutua.productbackend.models.Course;
 @CrossOrigin
 public class CourseController {
     
-    private List<Course> courses = new ArrayList<>();
+    private List<Course> courses = Arrays.asList(
+        new Course(1, "Angular"),
+        new Course(2, "Java"),
+        new Course(3, "React")
+    );
     
     @GetMapping("courses/{id}")
     public ResponseEntity<Course> getCourse(@PathVariable int id) {
